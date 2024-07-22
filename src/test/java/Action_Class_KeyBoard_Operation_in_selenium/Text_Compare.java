@@ -38,15 +38,21 @@ public class Text_Compare {
 	
 	// CTRL + V
 	
-	act.keyDown(Keys.CONTROL);
-	act.sendKeys("V");
-	act.keyUp(Keys.CONTROL);
-	act.build().perform();
+//	act.keyDown(Keys.CONTROL);
+//	act.sendKeys("V");
+//	act.keyUp(Keys.CONTROL);
+//	act.build().perform();
+	
+	act.keyDown(Keys.CONTROL).sendKeys("V").keyUp(Keys.CONTROL).build().perform();
+	
 	
 	driver.findElement(By.xpath("//button[@id='compareButton']")).click();
 	Thread.sleep(1000);
 	WebElement we=driver.findElement(By.xpath("//span[@class='messageForUser']"));
 	Thread.sleep(1000);
+	//String st=we.getText();
+	//System.out.println(st);
+	//System.out.println(we.getAttribute("value"));
 	System.out.println(we.getText());
 
 	}
